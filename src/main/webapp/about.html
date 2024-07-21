@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<title>JobFinder </title>
+  <link rel="icon" type="image/png" href="logo1.png">
+<meta charset="UTF-8">
+<meta property="og:locale" content="en_IN">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="About">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/indeed-pcl.min.css">
+<link rel="stylesheet" href="assets/css/abouts.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400%3B1%2C700&amp;display=swap&amp;ver=6.3.1">
+<link rel="stylesheet" href="assets/css/marketing-web-modules.min.css">
+</head>
+
+<body>
+	<header id="headerApp">
+		<!-- Header Start -->
+		<div class="header-area header-transparrent">
+			<div class="headder-top header-sticky">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-3 col-md-2">
+							<!-- Logo -->
+							<div class="logo">
+								<a href="https://git.adnan-tech.com/jobfinderportal"><img
+									src="images/logo.png" alt=""></a>
+							</div>
+						</div>
+						<div class="col-lg-9 col-md-9">
+							<div class="menu-wrapper">
+								<!-- Main-menu -->
+								<div class="main-menu">
+									<nav class="d-none d-lg-block">
+										<ul id="navigation">
+											<li><a href="https://git.adnan-tech.com/jobfinderportal">Home</a></li>
+											<li><a
+												href="https://git.adnan-tech.com/jobfinderportal/job/listing">Find
+													a Job </a></li>
+											<li v-if="user?.type == 'recruiter' || user?.type == 'admin'"><a
+												href="https://git.adnan-tech.com/jobfinderportal/job/create">Post
+													a Job </a></li>
+											<!-- <li><a href="/about">About</a></li> -->
+											<!-- <li><a href="/blog">Blog</a></li> -->
+											<!-- <li><a href="/contact">Contact</a></li> -->
+
+											<li v-if="user != null"><a href="#" v-text="user.name"></a>
+												<ul class="submenu">
+													<li><a
+														href="https://git.adnan-tech.com/jobfinderportal/user/profile">Profile</a></li>
+
+													<li
+														v-if="user?.type == 'recruiter' || user?.type == 'admin'">
+														<a
+														href="https://git.adnan-tech.com/jobfinderportal/user/jobs">My
+															Jobs</a>
+													</li>
+
+													<li v-if="user?.type == 'user' || user?.type == 'admin'">
+														<a
+														href="https://git.adnan-tech.com/jobfinderportal/user/applications">My
+															Applications</a>
+													</li>
+
+													<li><hr class="dropdown-divider"></li>
+													<li><a v-on:click="doLogout" href="javascript:void(0)">Logout</a></li>
+												</ul></li>
+										</ul>
+									</nav>
+								</div>
+
+								<template v-if="user == null">
+									<!-- Header-btn -->
+									<div class="header-btn d-none f-right d-lg-block">
+										<a
+											href="https://git.adnan-tech.com/jobfinderportal/user/register"
+											class="btn head-btn1">Register</a> <a
+											href="https://git.adnan-tech.com/jobfinderportal/user/login"
+											class="btn head-btn2">Login</a>
+									</div>
+								</template>
+							</div>
+						</div>
+						<!-- Mobile Menu -->
+						<div class="col-12">
+							<div class="mobile_menu d-block d-lg-none"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header End -->
+	</header>
+
+	<div class="mwm-page mwm-page--theme-aurora">
+		<main id="main-content"
+			class="mwm-page__content modular-page container-responsive RMotion"
+			data-tn-section="main_modular_content" tabindex="-1">
+			<div id="mod-1"
+				class="mwm-mod mwm-global-styles mwm-text-media palette--w-2 mwm-text-media--50-50 mwm-text-media--copy-left"
+				data-tn-component="mod1MwmTextMedia">
+				<div class="mwm-mod__container">
+					<div class="mwm-mod__content">
+						<div class="mwm-text-media__copy">
+							<div class="mod-heading ">
+								<h1
+									class="mwm-heading mod-heading__title mod-heading__title--hero">About
+									Jobfinder</h1>
+								<div class="mod-heading__subcopy pt-md-0">
+									<p>
+										Indeed is the #1 job site in the world 1 with over 350M+
+										unique visitors every month 2. Indeed strives to put job
+										seekers first, giving them free access to search for jobs,
+										post resumes, and research companies. Every day, we connect
+										millions of people to new opportunities.<b>Please note
+											that Indeed and its affiliates are directly or indirectly
+											owned by a publicly traded Japanese parent company, </b><a
+											href="https://recruit-holdings.com/en/"><b>Recruit
+												Holdings Co., Ltd.</b></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="mwm-text-media__media">
+							<mwm-media class="mwm-media mwm-media--default ">
+							<div class="mwm-image  ">
+								<picture> <img src="images/Image-Frame.png" alt="">
+								</picture>
+							</div>
+							</mwm-media>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="mod-2"
+				class="mwm-mod mwm-global-styles mwm-stats palette--w-2 mwm-stats--full-width"
+				data-tn-component="mod2MwmStats">
+				<div class="mwm-mod__container">
+					<div class="mwm-mod__content">
+						<ul class="mwm-stats__list  ">
+							<li class="mwm-stats__list-item "><span
+								class="mwm-stats__stat"> <x-indeed-adh
+										data-key="global_monthly_unique_visitors_ww"
+										data-param="local_format_value"> 320M+ </x-indeed-adh></span> <span
+								class="mwm-stats__details"> <span
+									class="mwm-stats__details-text"> Unique monthly visitors<sup>2</sup>
+								</span>
+							</span></li>
+							<li class="mwm-stats__list-item "><span
+								class="mwm-stats__stat"> <x-indeed-adh
+										data-key="total_resumes_on_indeed_ww"
+										data-param="local_format_value"> 50M </x-indeed-adh></span> <span
+								class="mwm-stats__details"> <span
+									class="mwm-stats__details-text"> Resumes on Indeed </span>
+							</span></li>
+							<li class="mwm-stats__list-item "><span
+								class="mwm-stats__stat"> <x-indeed-adh
+										data-key="total_ratings_and_reviews_ww"
+										data-param="local_format_value"> 980M+ </x-indeed-adh></span> <span
+								class="mwm-stats__details"> <span
+									class="mwm-stats__details-text"> Total ratings and
+										reviews </span>
+							</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="mod-3"
+				class="mwm-mod mwm-global-styles mwm-text-media palette--w-2 mwm-text-media--50-50 mwm-text-media--copy-right"
+				data-tn-component="mod3MwmTextMedia">
+				<div class="mwm-mod__container">
+					<div class="mwm-mod__content">
+						<div class="mwm-text-media__copy">
+							<div class="mod-heading ">
+								<h2 class="mwm-heading mod-heading__title">Our people</h2>
+								<div class="mod-heading__subcopy pt-md-0">
+									<p>At Indeed, our mission is to help people get jobs. We
+										have more than ~13,000 global employees passionately pursuing
+										this purpose and improving the recruitment journey through
+										real stories and data. We foster a collaborative workplace
+										that strives to create the best experience for job seekers.</p>
+								</div>
+							</div>
+						</div>
+						<div class="mwm-text-media__media">
+							<mwm-media class="mwm-media mwm-media--default ">
+							<div class="mwm-image  ">
+								<picture> <img src="images/6col.png"
+									alt="Image of two women, both wearing blue shirts that say "
+									i="" help="" people="" get="" jobs"."=""> </picture>
+							</div>
+							</mwm-media>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="mod-4"
+				class="mwm-mod mwm-global-styles mwm-text-media palette--w-2 mwm-text-media--50-50 mwm-text-media--copy-left"
+				data-tn-component="mod4MwmTextMedia">
+				<div class="mwm-mod__container">
+					<div class="mwm-mod__content">
+						<div class="mwm-text-media__copy">
+							<div class="mod-heading ">
+								<h2 class="mwm-heading mod-heading__title">Our Leadership</h2>
+								<div class="mod-heading__subcopy pt-md-0">
+									<p>Indeed’s leadership team is diverse, dedicated and
+										committed to empowering our employees to fulfill our mission:
+										We help people get jobs. By fostering strong partnerships and
+										collaboration, they serve and support job seekers, employers,
+										society and our employees.</p>
+								</div>
+								<a class="mwm-cta mwm-cta--button-primary mwm-button "
+									href="https://www.indeed.com/about/leadership" target="_self"
+									rel="noopener" data-tn-element="cta_1"> <span
+									class="mwm-cta__content"> <span class="mwm-cta__text">Meet
+											our team</span>
+								</span>
+								</a>
+							</div>
+						</div>
+						<div class="mwm-text-media__media">
+							<mwm-media class="mwm-media mwm-media--default ">
+							<div class="mwm-image  ">
+								<picture> <img src="images/403A9008-scaled.jpg"
+									alt="image of Priscilla Koranteng"> </picture>
+							</div>
+							</mwm-media>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="mod-5"
+				class="mwm-mod mwm-global-styles mwm-text-media palette--w-2 mwm-text-media--50-50 mwm-text-media--copy-right"
+				data-tn-component="mod5MwmTextMedia">
+				<div class="mwm-mod__container">
+					<div class="mwm-mod__content">
+						<div class="mwm-text-media__copy">
+							<div class="mod-heading ">
+								<h2 class="mwm-heading mod-heading__title">Our commitments</h2>
+								<div class="mod-heading__subcopy pt-md-0">
+									<p>
+										<span style="font-weight: 400">Our Environmental,
+											Social &amp; Governance (ESG) commitments aim to bring about
+											a future of work that is equitable and inclusive. As the
+											world’s number one job site and leading matching and hiring
+											platform<sup>1</sup>,
+										</span><span style="font-weight: 400"> &nbsp;we strive to make
+											a positive impact on society by connecting people to better
+											work to create better lives.</span>
+									</p>
+								</div>
+								<a class="mwm-cta mwm-cta--button-primary mwm-button "
+									href="https://www.indeed.com/esg" target="_self" rel="noopener"
+									data-tn-element="cta_1"> <span class="mwm-cta__content">
+										<span class="mwm-cta__text">Learn more</span>
+								</span>
+								</a>
+							</div>
+							<div class="mwm-source mwm-source--default ">
+								<span class="source small"> </span> <span class="source small">
+								</span>
+							</div>
+						</div>
+						<div class="mwm-text-media__media">
+							<mwm-media class="mwm-media mwm-media--default ">
+							<div class="mwm-image  ">
+								<picture> <img src="images/30m-jsfb-2-2.jpg" alt="">
+								</picture>
+							</div>
+							</mwm-media>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+	<div>
+		<footer>
+			<!-- Footer Start-->
+			<div class="footer-area footer-bg footer-padding">
+				<div class="container">
+					<div class="row d-flex justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+							<div class="single-footer-caption mb-50">
+								<div class="single-footer-caption mb-30">
+									<div class="footer-tittle">
+										<h4>About Us</h4>
+										<div class="footer-pera">
+											<p>Heaven frucvitful doesn't cover lesser dvsays appear
+												creeping seasons so behold.</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+							<div class="single-footer-caption mb-50">
+								<div class="footer-tittle">
+									<h4>Contact Info</h4>
+									<ul>
+										<li>
+											<p>Address :Your address goes here, your demo address.</p>
+										</li>
+										<li><a href="#">Phone : +8880 44338899</a></li>
+										<li><a href="#">Email : info@colorlib.com</a></li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+							<div class="single-footer-caption mb-50">
+								<div class="footer-tittle">
+									<h4>Important Link</h4>
+									<ul>
+										<li><a href="#"> View Project</a></li>
+										<li><a href="#">Contact Us</a></li>
+										<li><a href="#">Testimonial</a></li>
+										<li><a href="#">Proparties</a></li>
+										<li><a href="#">Support</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+							<div class="single-footer-caption mb-50">
+								<div class="footer-tittle">
+									<h4>Newsletter</h4>
+									<div class="footer-pera footer-pera2">
+										<p>Heaven fruitful doesn't over lesser in days. Appear
+											creeping.</p>
+									</div>
+									<!-- Form -->
+									<div class="footer-form">
+										<div id="mc_embed_signup">
+											<form target="_blank"
+												action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+												method="get" class="subscribe_form relative mail_part">
+												<input type="email" name="email" id="newsletter-form-email"
+													placeholder="Email Address"
+													class="placeholder hide-on-focus"
+													onfocus="this.placeholder = ''"
+													onblur="this.placeholder = ' Email Address '">
+												<div class="form-icon">
+													<button type="submit" name="submit" id="newsletter-submit"
+														class="email_icon newsletter-submit button-contactForm">
+														<img src="assets/img/icon/form.png" alt="">
+													</button>
+												</div>
+												<div class="mt-10 info"></div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--  -->
+					<div class="row footer-wejed justify-content-between">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+							<!-- logo -->
+							<div class="footer-logo mb-20">
+								<a href="https://git.adnan-tech.com/jobfinderportal"><img
+									src="images/logo2_footer.png" alt=""></a>
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+							<div class="footer-tittle-bottom">
+								<span>5000+</span>
+								<p>Talented Hunter</p>
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+							<div class="footer-tittle-bottom">
+								<span>451</span>
+								<p>Talented Hunter</p>
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+							<!-- Footer Bottom Tittle -->
+							<div class="footer-tittle-bottom">
+								<span>568</span>
+								<p>Talented Hunter</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- footer-bottom area -->
+			<div class="footer-bottom-area footer-bg">
+				<div class="container">
+					<div class="footer-border">
+						<div class="row d-flex justify-content-between align-items-center">
+							<div class="col-xl-10 col-lg-10 ">
+								<div class="footer-copy-right">
+									<p>
+										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+										Copyright ©
+										<script>
+											document.write(new Date()
+													.getFullYear());
+										</script>
+										2024 All rights reserved | This template is made with <i
+											class="fa fa-heart" aria-hidden="true"></i> by <a
+											href="https://colorlib.com" target="_blank">Colorlib</a>
+										<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+									</p>
+								</div>
+							</div>
+							<div class="col-xl-2 col-lg-2">
+								<div class="footer-social f-right">
+									<a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
+										class="fab fa-twitter"></i></a> <a href="#"><i
+										class="fas fa-globe"></i></a> <a href="#"><i
+										class="fab fa-behance"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Footer End-->
+		</footer>
+	</div>
+</body>
+</html>
